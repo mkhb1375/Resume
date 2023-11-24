@@ -1,4 +1,5 @@
-import 'cross-fetch/polyfill'; // Import the polyfill to provide Headers globally
+import fetch, { Headers } from "node-fetch";
+
 
 import type { Metadata } from 'next';
 import './globals.css';
