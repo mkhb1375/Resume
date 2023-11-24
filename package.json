@@ -13,6 +13,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "axios": "^1.6.1",
+    "cross-fetch": "^4.0.0",
     "fontawesome-free": "^1.0.4",
     "jalali-moment": "^3.3.11",
     "js-cookie": "^3.0.5",

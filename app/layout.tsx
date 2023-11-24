@@ -1,16 +1,15 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { peyda } from "./ui/Fonts/Fonts";
-import Head from "next/head";
-import RecoilContextProvider from "./recoilContextProvider";
- import QueryContextProvider from "./querycontextprovider";
- import { Headers as NodeFetchHeaders } from 'node-fetch';
+import 'cross-fetch/polyfill'; // Import the polyfill to provide Headers globally
 
- global.Headers = NodeFetchHeaders as unknown as typeof Headers;
- 
+import type { Metadata } from 'next';
+import './globals.css';
+import { peyda } from './ui/Fonts/Fonts';
+import Head from 'next/head';
+import RecoilContextProvider from './recoilContextProvider';
+import QueryContextProvider from './querycontextprovider';
+
 export const metadata: Metadata = {
-  title: "MetaNext",
-  description: "Test Project",
+  title: 'MetaNext',
+  description: 'Test Project',
 };
 
 export default function RootLayout({
@@ -26,9 +25,7 @@ export default function RootLayout({
       <body className={`${peyda.className}`}>
         {/* Wrap the components with both Recoil and Query providers */}
         <RecoilContextProvider>
-          <QueryContextProvider>
-            {children}
-          </QueryContextProvider>
+          <QueryContextProvider>{children}</QueryContextProvider>
         </RecoilContextProvider>
       </body>
     </html>
